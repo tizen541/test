@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html ng-csp="">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+        <title>Jorte Calendar</title>
+        <link rel="stylesheet" type="text/css" href="style/style.css" />
+        <link rel="stylesheet" type="text/css" href="locales/{{currentLocale}}/lang-style.css" />
+        <link rel="stylesheet" type="text/css" href="style/fullcalendar.css" />
+        <link rel="stylesheet" type="text/css" href="style/jquery-ui-custom.css" />
+        <link rel="stylesheet" type="text/css" href="style/fonts/font.css" />
+        <link rel="stylesheet" type="text/css" href="style/seekbars.css" />
+        <!-- localization -->
+        <link rel="resource" type="application/l10n" href="locales/locales.ini" />
+        <script type="text/javascript" src="js/ext/l10n.js"></script>
+        <script type="text/javascript" src="js/lang/message.js"></script>
+
+        <script type="text/javascript" src="js/ext/jquery.min.js"></script>
+        <script type="text/javascript" src="js/ext/fastclick.js"></script>
+        <script type="text/javascript" src="js/ext/jquery.touchSwipe.js"></script>
+        <script type="text/javascript" src="js/ext/jstz.js"></script>
+        <script type="text/javascript" src="js/ext/rrule.js"></script>
+        <script type="text/javascript" src="js/ext/angular.min.js"></script>
+        <script type="text/javascript" src="js/ext/angular-route.min.js"></script>
+        <script type="text/javascript" src="js/ext/jquery-ui-custom.js"></script>
+        <script type="text/javascript" src="js/ext/jquery-ui-nohead.js"></script>
+        <script type="text/javascript" src="js/ext/dialog-service.js"></script>
+        <script type="text/javascript" src="js/ext/datajs-1.1.1.js"></script>
+        <script type="text/javascript" src="js/ext/jszip.js"></script>
+        <script type="text/javascript" src="js/ext/jszip-load.js"></script>
+        <script type="text/javascript" src="js/ext/jszip-inflate.js"></script>
+        <script type="text/javascript" src="js/ext/xml2json.js"></script>
+        <script type="text/javascript" src="js/ext/seekbars.js"></script>
+        <script type="text/javascript" src="js/ext/loader-icon.js"></script>
+        <script type="text/javascript" src="js/ext/verbalExpressions.js"></script>
+        
+        <script type="text/javascript" src="js/config/config.js"></script>
+        <script type="text/javascript" src="js/config/jorteConfig.js"></script>
+        <script type="text/javascript" src="js/run.js"></script>
+        <script type="text/javascript" src="js/entities.js"></script>
+        <script type="text/javascript" src="js/jortedb.js"></script>
+        <script type="text/javascript" src="js/jorteApp.js"></script>
+        <script type="text/javascript" src="js/jorteRoute.js"></script>
+
+        <script type="text/javascript" src="js/directives/jorteL10n.js"></script>
+        <script type="text/javascript" src="js/directives/jorteWhenScrolled.js"></script>
+               
+        <script type="text/javascript" src="js/utils/utils.js"></script>
+        <script type="text/javascript" src="js/utils/tz_list.js"></script>
+        <script type="text/javascript" src="js/utils/timezone_list.js"></script>
+        <script type="text/javascript" src="js/utils/icons.js"></script>
+
+        <script type="text/javascript" src="js/controllers/main.js"></script>
+        <script type="text/javascript" src="js/controllers/dayEvents.js"></script>
+        <script type="text/javascript" src="js/controllers/mainEvents.js"></script>
+        <script type="text/javascript" src="js/controllers/mainTasks.js"></script>
+        <script type="text/javascript" src="js/controllers/mainEvtCalendars.js"></script>
+        <script type="text/javascript" src="js/controllers/task/tasksAndMemo.js"></script>
+        <script type="text/javascript" src="js/controllers/dayEventsPopup.js"></script>
+        <script type="text/javascript" src="js/controllers/eventTaskDetails.js"></script>
+
+        <!--Event-->
+        <script type="text/javascript" src="js/controllers/event/createEvent.js"></script>
+        <script type="text/javascript" src="js/controllers/event/editEvent.js"></script>
+        <script type="text/javascript" src="js/controllers/event/repeatSelect.js"></script>
+        <script type="text/javascript" src="js/controllers/event/repeatForm.js"></script>
+        <script type="text/javascript" src="js/controllers/event/eventSession.js"></script>
+        <script type="text/javascript" src="js/controllers/event/iconList.js"></script>
+        <script type="text/javascript" src="js/controllers/event/eventSwap.js"></script>
+        <script type="text/javascript" src="js/controllers/event/googleTimezone.js"></script>
+        <script type="text/javascript" src="js/controllers/event/eventTemplate.js"></script>
+
+        <!--Task-->
+        <script type="text/javascript" src="js/controllers/task/taskList.js"></script>
+        <script type="text/javascript" src="js/controllers/task/taskCreate.js"></script>
+        <script type="text/javascript" src="js/controllers/task/taskEdit.js"></script>
+
+        <script type="text/javascript" src="js/controllers/calendar-settings/calendarSettings.js"></script>
+        <script type="text/javascript" src="js/controllers/settings/mainSettings.js"></script>
+        <script type="text/javascript" src="js/controllers/settings/viewSettings.js"></script>
+        <script type="text/javascript" src="js/controllers/settings/optionSettings.js"></script>
+        <script type="text/javascript" src="js/controllers/settings/viewEventSettings.js"></script>
+        <script type="text/javascript" src="js/controllers/settings/notificationSettings.js"></script>
+        <script type="text/javascript" src="js/controllers/settings/aboutJorte.js"></script>
+
+        <script type="text/javascript" src="js/controllers/provider/jorteLogin.js"></script>
+        <script type="text/javascript" src="js/controllers/provider/googleLogin.js"></script>
+
+        <!--Customize-->
+        <script type="text/javascript" src="js/controllers/customize/customize.js"></script>
+        <script type="text/javascript" src="js/controllers/customize/staticThemes.js"></script>
+        <script type="text/javascript" src="js/controllers/customize/theme.js"></script>
+
+
+        <!--Common-->
+        <script type="text/javascript" src="js/controllers/commons/colorPicker.js"></script>
+        <script type="text/javascript" src="js/controllers/commons/reminder.js"></script>
+        <script type="text/javascript" src="js/controllers/commons/datePicker.js"></script>
+        <script type="text/javascript" src="js/controllers/commons/timePicker.js"></script>
+        <script type="text/javascript" src="js/controllers/commons/confirmBox.js"></script>
+
+        <script type="text/javascript" src="js/controllers/search/search.js"></script>
+        <script type="text/javascript" src="js/controllers/event-calendar/eventCalendar.js"></script>
+        <script type="text/javascript" src="js/controllers/notification/notification.js"></script>
+
+        <script type="text/javascript" src="js/services/models/jortedb.js"></script>
+        <script type="text/javascript" src="js/services/models/main.js"></script>
+        <script type="text/javascript" src="js/services/models/event.js"></script>
+        <script type="text/javascript" src="js/services/models/task.js"></script>
+        <script type="text/javascript" src="js/services/models/theme.js"></script>
+        <script type="text/javascript" src="js/services/models/evtCalendar.js"></script>
+        <script type="text/javascript" src="js/services/models/reminder.js"></script>
+        <script type="text/javascript" src="js/services/models/search.js"></script>
+        <script type="text/javascript" src="js/services/models/template.js"></script>
+        <script type="text/javascript" src="js/services/models/font.js"></script>
+        <script type="text/javascript" src="js/services/models/calendar.js"></script>
+
+        <script type="text/javascript" src="js/services/oauth/jorteAuth.js"></script>
+        <script type="text/javascript" src="js/services/oauth/googleAuth.js"></script>
+
+        <script type="text/javascript" src="js/services/sync/sync.js"></script>
+        <script type="text/javascript" src="js/services/sync/jorteSync.js"></script>
+        <script type="text/javascript" src="js/services/sync/googleSync.js"></script>
+        <script type="text/javascript" src="js/services/sync/localdbSync.js"></script>
+
+        <script type="text/javascript" src="js/services/notification/notification.js"></script>
+        <script type="text/javascript" src="js/services/notification/helper.js"></script>
+
+        <script type="text/javascript" src="js/services/api/calendarApi.js"></script>
+        <script type="text/javascript" src="js/services/holiday.js"></script>
+        <script type="text/javascript" src="js/services/api/holidayApi.js"></script>
+        <script type="text/javascript" src="js/services/repeatRule.js"></script>
+
+        <style type="text/css" ng-bind-template="{{themeStyle}}"></style>
+        <style type="text/css" ng-bind-template="{{newFont}}"></style>
+        <style type="text/css" ng-bind-template="{{numFont}}"></style>
+        <style type="text/css" ng-bind-template="{{textFont}}"></style>
+        <style type="text/css" ng-bind-template="{{monthFont}}"></style>
+       
+    </head>
+    <body style="background-color: #FFF">
+        <div ng-view>
+            <div class="splash"><img src="style/icons/load3.gif" alt=""></div>
+        </div>
+        <!--Day events-->
+        <div ng-include="'partials/day-events-popup.html'"></div>
+        <div ng-include="'partials/event-task-detail-popup.html'"></div>
+        <!--Event-->
+        <div ng-include="'partials/event/create-event.html'"></div>
+        <div ng-include="'partials/event/edit-event.html'"></div>
+        <div ng-include="'partials/event/repeat-select.html'"></div>
+        <div ng-include="'partials/event/repeat-form.html'"></div>
+        <div ng-include="'partials/event/event-session.html'"></div>
+        <div ng-include="'partials/event/icon-list.html'"></div>
+        <div ng-include="'partials/event/event-swap.html'"></div>
+        <div ng-include="'partials/event/google-timezone.html'"></div>
+        <div ng-include="'partials/event/event-template.html'"></div>
+
+        <!--Task-->
+        <div ng-include="'partials/task/task-create.html'"></div>
+        <div ng-include="'partials/task/task-edit.html'"></div>
+        <div ng-include="'partials/task/task-list.html'"></div>
+
+        <div ng-include="'partials/settings/option-settings.html'"></div>
+        <div ng-include="'partials/settings/autosync-interval.html'"></div>
+
+        <div ng-include="'partials/search/search-form-popup.html'"></div>
+        <div ng-include="'partials/provider/jorte-oauth.html'"></div>        
+        <div ng-include="'partials/provider/google-oauth.html'"></div>      
+
+        <div ng-include="'partials/event-calendar/calendar-detail-popup.html'"></div>
+        <div ng-include="'partials/event-calendar/cid-select-popup.html'"></div>
+
+        <div ng-include="'partials/calendar-settings/evt-cal-detail.html'"></div>
+        <div ng-include="'partials/calendar-settings/cal-detail.html'"></div>
+        <div ng-include="'partials/calendar-settings/calendar-type.html'"></div>        
+
+        <div ng-include="'partials/customize/theme.html'"></div>
+        <div ng-include="'partials/customize/theme-title-edit-popup.html'"></div>
+        <div ng-include="'partials/customize/color-pick-popup.html'"></div>
+        <div ng-include="'partials/customize/download-list.html'"></div>
+
+        <!--Common-->
+        <div ng-include="'partials/commons/reminder.html'"></div>        
+        <div ng-include="'partials/commons/color-picker.html'"></div>
+        <div ng-include="'partials/commons/time-picker.html'"></div>
+        <div ng-include="'partials/commons/date-picker.html'"></div>
+        <div ng-include="'partials/commons/confirm-box.html'"></div>
+
+        <div ng-include="'partials/notification/notification.html'"></div>
+    </body>
+</html>
